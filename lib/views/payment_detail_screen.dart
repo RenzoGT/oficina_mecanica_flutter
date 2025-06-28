@@ -25,7 +25,7 @@ class _PaymentDetailScreenState extends State<PaymentDetailScreen> {
     'Cartao de Debito',
     'Dinheiro',
     'Pix',
-    'Transferencia',
+    'Transferencia'
   ];
 
   String? _selectedInvoiceId;
@@ -63,6 +63,7 @@ class _PaymentDetailScreenState extends State<PaymentDetailScreen> {
     if (_isInit) {
       Provider.of<InvoiceViewModel>(context, listen: false).fetchInvoices();
       Provider.of<ServiceViewModel>(context, listen: false).fetchServices();
+      Provider.of<PaymentViewModel>(context, listen: false).fetchPayments();
     }
     _isInit = false;
     super.didChangeDependencies();
@@ -95,10 +96,8 @@ class _PaymentDetailScreenState extends State<PaymentDetailScreen> {
       return;
     }
 
-    final paymentViewModel = Provider.of<PaymentViewModel>(
-      context,
-      listen: false,
-    );
+    final paymentViewModel =
+        Provider.of<PaymentViewModel>(context, listen: false);
 
     final newPayment = Payment(
       id: widget.payment?.id ?? '0',
@@ -124,8 +123,7 @@ class _PaymentDetailScreenState extends State<PaymentDetailScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              paymentViewModel.errorMessage ?? "Ocorreu um erro desconhecido.",
-            ),
+                paymentViewModel.errorMessage ?? "Ocorreu um erro desconhecido."),
             backgroundColor: Colors.red,
           ),
         );
@@ -137,6 +135,7 @@ class _PaymentDetailScreenState extends State<PaymentDetailScreen> {
   Widget build(BuildContext context) {
     final invoiceViewModel = Provider.of<InvoiceViewModel>(context);
     final serviceViewModel = Provider.of<ServiceViewModel>(context);
+    final paymentViewModel = Provider.of<PaymentViewModel>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -150,47 +149,51 @@ class _PaymentDetailScreenState extends State<PaymentDetailScreen> {
           key: _formKey,
           child: ListView(
             children: <Widget>[
-              if (invoiceViewModel.isLoading || serviceViewModel.isLoading)
+              if (invoiceViewModel.isLoading || serviceViewModel.isLoading || paymentViewModel.isLoading)
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 16.0),
                   child: Center(child: CircularProgressIndicator()),
                 )
               else
-                DropdownButtonFormField<String>(
-                  decoration: const InputDecoration(
-                    labelText: 'Fatura',
-                    border: OutlineInputBorder(),
-                  ),
-                  value: _selectedInvoiceId,
-                  hint: const Text('Selecione uma fatura'),
-                  items: invoiceViewModel.invoices.map((Invoice invoice) {
-                    final service = serviceViewModel.services.firstWhere(
-                      (s) => s.id == invoice.serviceId,
-                      orElse: () => Service(
-                        id: '',
-                        serviceType: 'Serviço',
-                        vehicleId: '',
-                        scheduledDate: '',
-                        scheduledTime: '',
-                        status: '',
-                        description: '',
-                        totalValue: 0,
+                Builder(
+                  builder: (context) {
+                    final paidInvoiceIds = paymentViewModel.payments
+                        .map((p) => p.invoiceId)
+                        .toSet();
+
+                    final availableInvoices = invoiceViewModel.invoices.where((invoice) {
+                      final hasPayment = paidInvoiceIds.contains(invoice.id);
+                      final isCurrentInvoiceForEdit = invoice.id == widget.payment?.invoiceId;
+                      return !hasPayment || isCurrentInvoiceForEdit;
+                    }).toList();
+                    
+                    return DropdownButtonFormField<String>(
+                      decoration: const InputDecoration(
+                        labelText: 'Fatura',
+                        border: OutlineInputBorder(),
                       ),
+                      value: _selectedInvoiceId,
+                      hint: const Text('Selecione uma fatura'),
+                      items: availableInvoices.map((Invoice invoice) {
+                        final service = serviceViewModel.services.firstWhere(
+                          (s) => s.id == invoice.serviceId,
+                          orElse: () => Service(id: '', serviceType: 'Serviço', vehicleId: '', scheduledDate: '', scheduledTime: '', status: '', description: '', totalValue: 0),
+                        );
+                        return DropdownMenuItem<String>(
+                          value: invoice.id,
+                          child: Text(
+                              '${service.serviceType} - R\$ ${invoice.totalInvoiceValue.toStringAsFixed(2)}'),
+                        );
+                      }).toList(),
+                      onChanged: (String? newValue) {
+                        setState(() {
+                          _selectedInvoiceId = newValue;
+                        });
+                      },
+                      validator: (value) =>
+                          value == null ? 'Por favor, selecione uma fatura' : null,
                     );
-                    return DropdownMenuItem<String>(
-                      value: invoice.id,
-                      child: Text(
-                        '${service.serviceType} - R\$ ${invoice.totalInvoiceValue.toStringAsFixed(2)}',
-                      ),
-                    );
-                  }).toList(),
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      _selectedInvoiceId = newValue;
-                    });
-                  },
-                  validator: (value) =>
-                      value == null ? 'Por favor, selecione uma fatura' : null,
+                  }
                 ),
               const SizedBox(height: 16),
               TextFormField(
@@ -253,8 +256,7 @@ class _PaymentDetailScreenState extends State<PaymentDetailScreen> {
                 ),
                 onPressed: _savePayment,
                 child: Text(
-                  widget.payment == null ? 'Adicionar' : 'Salvar Alterações',
-                ),
+                    widget.payment == null ? 'Adicionar' : 'Salvar Alterações'),
               ),
             ],
           ),

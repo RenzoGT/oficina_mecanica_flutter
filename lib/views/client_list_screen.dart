@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:oficina_mecanica/viewmodels/client_viewmodel.dart';
 import 'package:oficina_mecanica/views/client_detail_screen.dart';
-import 'package:oficina_mecanica/models/client.dart';
 
 class ClientListScreen extends StatefulWidget {
   const ClientListScreen({super.key});

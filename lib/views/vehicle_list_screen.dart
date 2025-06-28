@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:oficina_mecanica/viewmodels/vehicle_viewmodel.dart';
 import 'package:oficina_mecanica/views/vehicle_detail_screen.dart';
-import 'package:oficina_mecanica/models/vehicle.dart';
 
 class VehicleListScreen extends StatefulWidget {
   const VehicleListScreen({super.key});
