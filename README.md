@@ -1,4 +1,4 @@
-# 🚗 Sistema de Gerenciamento para Oficina Mecânica
+![image](https://github.com/user-attachments/assets/eef9d18b-bf24-438d-8a03-7518870b0137)# 🚗 Sistema de Gerenciamento para Oficina Mecânica
 
 ![Status](https://img.shields.io/badge/status-conclu%C3%ADdo-green)
 
@@ -101,20 +101,17 @@ _(Dica: Tire prints das suas telas e substitua os links abaixo. Isso deixará se
 
 | Tela Principal                                         | Relatório Financeiro                         |
 | ------------------------------------------------------ | -------------------------------------------- |
-| ![Tela Principal](URL_DA_IMAGEM_DA_TELA_PRINCIPAL.png) | ![Relatório](URL_DA_IMAGEM_DO_RELATORIO.png) |
+| ![Tela Principal](![image](https://github.com/user-attachments/assets/c2d554b5-f447-4638-bf48-f0733c2408bb)
+) | ![Relatório](![image](https://github.com/user-attachments/assets/cc659112-94e1-4e16-acee-3558d54cfcee)
+) |
 
 | Detalhes do Serviço                      | Lista de Peças com Aviso                      |
 | ---------------------------------------- | --------------------------------------------- |
-| ![Serviço](URL_DA_IMAGEM_DO_SERVICO.png) | ![Peças](URL_DA_IMAGEM_DA_LISTA_DE_PECAS.png) |
+| ![Serviço](![image](https://github.com/user-attachments/assets/9fd7fb77-15f9-4d51-9f84-1b137392d33e)
+) | ![Peças](![image](https://github.com/user-attachments/assets/fbc9398a-3741-4f57-8a4e-50ef615c69c0)
+) |
 
 ---
-
-## 👨‍💻 Autor
-
-Feito com ❤️ por **[SEU NOME AQUI]**
-
-- **GitHub:** [@SEU_USUARIO_GITHUB](https://github.com/SEU_USUARIO)
-- **LinkedIn:** [SEU NOME](https://www.linkedin.com/in/SEU_USUARIO_LINKEDIN/)
 
 ---
 
