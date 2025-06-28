@@ -1,0 +1,22 @@
+# Arquivos e pastas gerados pelo Flutter.
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+app.*.symbols
+app.*.map.json
+
+# Arquivos de metadados de pacotes.
+.packages
+pubspec.lock # Se você estiver criando uma LIB (pacote), descomente esta linha. Para APPS, deixe-a comentada.
+
+# Configurações de IDEs.
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+
+# Arquivos de log e diversos.
+*.log
+.DS_Store
