@@ -97,8 +97,6 @@ Para executar este projeto localmente, siga os passos abaixo:
 
 ## 🎨 Telas do Aplicativo
 
-_(Dica: Tire prints das suas telas e substitua os links abaixo. Isso deixará seu README muito mais profissional!)_
-
 | Tela Principal | Relatório Financeiro |
 | :---: | :---: |
 | ![Tela Principal](https://github.com/user-attachments/assets/c2d554b5-f447-4638-bf48-f0733c2408bb) | ![Relatório Financeiro](https://github.com/user-attachments/assets/cc659112-94e1-4e16-acee-3558d54cfcee) |
