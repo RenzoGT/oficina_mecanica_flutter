@@ -73,7 +73,7 @@ Para executar este projeto localmente, siga os passos abaixo:
 2.  **Clonar o repositório:**
 
     ```bash
-    git clone [https://github.com/RenzoGT/oficina_mecanica_flutter.git](https://github.com/RenzoGT/oficina_mecanica_flutter.git)
+    git clone https://github.com/RenzoGT/oficina_mecanica_flutter.git
     ```
 
 3.  **Acessar a pasta do projeto:**
