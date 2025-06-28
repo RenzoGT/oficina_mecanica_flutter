@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/eef9d18b-bf24-438d-8a03-7518870b0137)# 🚗 Sistema de Gerenciamento para Oficina Mecânica
+# 🚗 Sistema de Gerenciamento para Oficina Mecânica
 
 ![Status](https://img.shields.io/badge/status-conclu%C3%ADdo-green)
 
@@ -101,14 +101,14 @@ _(Dica: Tire prints das suas telas e substitua os links abaixo. Isso deixará se
 
 | Tela Principal                                         | Relatório Financeiro                         |
 | ------------------------------------------------------ | -------------------------------------------- |
-| ![Tela Principal](![image](https://github.com/user-attachments/assets/c2d554b5-f447-4638-bf48-f0733c2408bb)
-) | ![Relatório](![image](https://github.com/user-attachments/assets/cc659112-94e1-4e16-acee-3558d54cfcee)
+| ![image](https://github.com/user-attachments/assets/c2d554b5-f447-4638-bf48-f0733c2408bb)
+) | ![image](https://github.com/user-attachments/assets/cc659112-94e1-4e16-acee-3558d54cfcee)
 ) |
 
 | Detalhes do Serviço                      | Lista de Peças com Aviso                      |
 | ---------------------------------------- | --------------------------------------------- |
-| ![Serviço](![image](https://github.com/user-attachments/assets/9fd7fb77-15f9-4d51-9f84-1b137392d33e)
-) | ![Peças](![image](https://github.com/user-attachments/assets/fbc9398a-3741-4f57-8a4e-50ef615c69c0)
+| ![image](https://github.com/user-attachments/assets/9fd7fb77-15f9-4d51-9f84-1b137392d33e)
+) | ![image](https://github.com/user-attachments/assets/fbc9398a-3741-4f57-8a4e-50ef615c69c0)
 ) |
 
 ---
