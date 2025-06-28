@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:oficina_mecanica/viewmodels/service_viewmodel.dart';
 import 'package:oficina_mecanica/views/service_detail_screen.dart';
-import 'package:oficina_mecanica/models/service.dart';
 
 class ServiceListScreen extends StatefulWidget {
   const ServiceListScreen({super.key});

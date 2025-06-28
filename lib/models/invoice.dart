@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 class Invoice {
   final String id;
   final String serviceId;

@@ -25,15 +25,6 @@ class _HomePageState extends State<HomePage> {
     PaymentListScreen(),
   ];
 
-  static const List<String> _appBarTitles = <String>[
-    'Clientes',
-    'Veículos',
-    'Serviços',
-    'Estoque de Peças',
-    'Faturas',
-    'Pagamentos',
-  ];
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;

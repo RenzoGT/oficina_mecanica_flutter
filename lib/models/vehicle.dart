@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 class Vehicle {
   final String id;
   final String clientId;

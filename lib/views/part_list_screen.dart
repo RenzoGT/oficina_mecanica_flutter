@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:oficina_mecanica/viewmodels/part_viewmodel.dart';
 import 'package:oficina_mecanica/views/part_detail_screen.dart';
-import 'package:oficina_mecanica/models/part.dart';
 import 'package:oficina_mecanica/views/stock_report_screen.dart';
 
 class PartListScreen extends StatefulWidget {
