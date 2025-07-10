@@ -1,7 +1,10 @@
+// lib/main.dart
+
 import 'package:flutter/material.dart';
+import 'package:oficina_mecanica/viewmodels/auth_viewmodel.dart';
 import 'package:oficina_mecanica/viewmodels/financial_report_viewmodel.dart';
 import 'package:provider/provider.dart';
-import 'package:oficina_mecanica/views/home_page.dart';
+import 'package:oficina_mecanica/views/auth/auth_wrapper.dart';
 import 'package:oficina_mecanica/viewmodels/client_viewmodel.dart';
 import 'package:oficina_mecanica/viewmodels/vehicle_viewmodel.dart';
 import 'package:oficina_mecanica/viewmodels/part_viewmodel.dart';
@@ -20,6 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (_) => AuthViewModel()),
         ChangeNotifierProvider(create: (_) => ClientViewModel()),
         ChangeNotifierProvider(create: (_) => VehicleViewModel()),
         ChangeNotifierProvider(create: (_) => PartViewModel()),
@@ -31,7 +35,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Oficina Mecânica',
         theme: ThemeData(primarySwatch: Colors.blue),
-        home: const HomePage(),
+        home: const AuthWrapper(),
         debugShowCheckedModeBanner: false,
       ),
     );
